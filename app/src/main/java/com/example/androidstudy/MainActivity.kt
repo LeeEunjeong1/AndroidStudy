@@ -14,6 +14,7 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.platform.textInputServiceFactory
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -31,6 +32,14 @@ class MainActivity : ComponentActivity() {
                 ) {
                     PhotographerCardPreview()
                 }
+
+                TopAppBar(
+                    title = {
+                        Text(text = "Page title", maxLines = 2)
+                    },
+                    navigationIcon = {
+                    }
+                )
             }
         }
     }
@@ -50,7 +59,8 @@ fun PhotographerCard(){
         .clickable(onClick = { /* Ignoring onClick */ })
         .padding(16.dp)){
         Surface(
-            modifier = Modifier.size(50.dp)
+            modifier = Modifier
+                .size(50.dp)
                 .align(Alignment.CenterVertically),
             shape = CircleShape,
             color = MaterialTheme.colors.onSurface.copy(alpha = 0.2f)) {
