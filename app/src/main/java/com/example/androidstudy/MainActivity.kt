@@ -32,7 +32,6 @@ class MainActivity : ComponentActivity() {
                 ) {
                     PhotographerCardPreview()
                 }
-
                 TopAppBar(
                     title = {
                         Text(text = "Page title", maxLines = 2)
@@ -87,4 +86,11 @@ fun PhotographerCardPreview() {
     AndroidStudyTheme() {
         PhotographerCard()
     }
+}
+
+@Composable
+fun Button(
+    modifier: Modifier = Modifier,
+    onClick:(()-> Unit)? = null
+) {
 }
