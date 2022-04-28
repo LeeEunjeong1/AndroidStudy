@@ -5,6 +5,8 @@ import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
@@ -19,6 +21,7 @@ class SecondActivity : AppCompatActivity() {
         setContent{
             AndroidStudyTheme {
                 AndroidStudy()
+
                 
             }
         }
@@ -51,8 +54,9 @@ fun AndroidStudy() {
                 }
             )
         }
-    ) { innerPadding ->
-        BodyContent(Modifier.padding(innerPadding))
+    ) {
+       // BodyContent(Modifier.padding(innerPadding))
+        SimpleList()
     }
 }
 
@@ -69,5 +73,15 @@ fun BodyContent(modifier: Modifier = Modifier) {
 fun AndroidStudyPreview(){
     AndroidStudyTheme {
         AndroidStudy()
+    }
+}
+
+@Composable
+fun SimpleList(){
+    val scrollState = rememberScrollState()
+    Column(Modifier.verticalScroll(scrollState)){
+        repeat(100){
+            Text("Item #$it")
+        }
     }
 }
