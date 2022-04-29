@@ -26,13 +26,16 @@ class TestActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             ComposeStudyTheme{
-                MyApp()
+                MyApp() 
             }
         }
     }
 }
 @Composable
 fun MyApp(){
+    val cnt = remember{
+        mutableStateOf(0)
+    }
     Surface(
         modifier = Modifier
             .fillMaxHeight()
@@ -44,12 +47,37 @@ fun MyApp(){
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text(text = "$100", style = TextStyle(
+            Text(text = "${cnt.value}", style = TextStyle(
                 fontSize = 35.sp,
                 fontWeight = FontWeight.ExtraBold
             ))
             Spacer(modifier = Modifier.height(130.dp))
-            CreateCircle()
+            CreateCircle(cnt = cnt.value){ newValue ->
+                cnt.value = newValue + 1
+            }
+            if(cnt.value > 10){
+                Text(text = "Over $10 !!")
+            }
+        }
+
+    }
+}
+
+
+@Preview
+@Composable
+fun CreateCircle(cnt: Int = 0, updateCnt: (Int) -> Unit){
+    Card(modifier = Modifier
+        .padding(3.dp)
+        .size((100+cnt).dp)
+        .clickable {
+            updateCnt(cnt)
+            Log.d("Tap", "CreateCircle : $cnt")
+        },
+    shape = CircleShape,
+    elevation = 4.dp) {
+        Box(contentAlignment = Alignment.Center){
+            Text(text = "Tap",modifier = Modifier)
         }
 
     }
@@ -59,26 +87,4 @@ fun MyApp(){
 @Composable
 fun DefaultPreview(){
     MyApp()
-}
-
-@Preview
-@Composable
-fun CreateCircle(){
-    var cnt by remember {
-        mutableStateOf(0)
-    }
-    Card(modifier = Modifier
-        .padding(3.dp)
-        .size(50.dp)
-        .clickable {
-            cnt += 1
-            Log.d("Tap", "CreateCircle : Tap")
-        },
-    shape = CircleShape,
-    elevation = 4.dp) {
-        Box(contentAlignment = Alignment.Center){
-            Text(text = "Tap $cnt",modifier = Modifier)
-        }
-
-    }
 }
