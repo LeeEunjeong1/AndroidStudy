@@ -17,13 +17,13 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.composestudy.ui.theme.AndroidStudyTheme
+import com.example.composestudy.ui.theme.ComposeStudyTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            AndroidStudyTheme {
+            ComposeStudyTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
@@ -82,7 +82,7 @@ fun PhotographerCard(){
 @Preview
 @Composable
 fun PhotographerCardPreview() {
-    AndroidStudyTheme() {
+    ComposeStudyTheme() {
         PhotographerCard()
     }
 }

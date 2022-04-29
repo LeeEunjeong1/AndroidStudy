@@ -18,13 +18,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberImagePainter
-import com.example.composestudy.ui.theme.AndroidStudyTheme
+import com.example.composestudy.ui.theme.ComposeStudyTheme
 
 class SecondActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
         setContent{
-            AndroidStudyTheme {
+            ComposeStudyTheme {
                 AndroidStudy()
             }
         }
@@ -76,7 +76,7 @@ fun BodyContent(modifier: Modifier = Modifier) {
 @Preview
 @Composable
 fun AndroidStudyPreview(){
-    AndroidStudyTheme {
+    ComposeStudyTheme {
         AndroidStudy()
     }
 }
