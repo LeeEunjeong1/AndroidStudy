@@ -16,8 +16,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.composestudy.ui.theme.ComposeStudyTheme
 
 class TestActivity : ComponentActivity() {
@@ -37,13 +40,16 @@ fun MyApp(){
             .fillMaxHeight()
             .fillMaxWidth()
             .padding(all = 30.dp),
-        color = Color(0xFF4666d0)
+        color = Color.Yellow
     ) {
         Column(
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text(text = "$100")
+            Text(text = "$100", style = TextStyle(
+                fontSize = 35.sp,
+                fontWeight = FontWeight.ExtraBold
+            ))
             Spacer(modifier = Modifier.height(130.dp))
             CreateCircle()
         }
