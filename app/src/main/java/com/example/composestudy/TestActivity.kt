@@ -39,9 +39,13 @@ fun MyApp(){
             .padding(all = 30.dp),
         color = Color(0xFF4666d0)
     ) {
-        Column() {
+        Column(
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
             Hello( "Android")
             ShowAge(26666666)
+            CreateCircle()
         }
 
     }
@@ -69,9 +73,10 @@ fun CreateCircle(){
         .padding(3.dp)
         .size(50.dp)
         .clickable {
-                   Log.d("Tap","CreateCircle : Tap")
+            Log.d("Tap", "CreateCircle : Tap")
         },
-    shape = CircleShape) {
+    shape = CircleShape,
+    elevation = 4.dp) {
         Box(contentAlignment = Alignment.Center){
             Text(text = "Tap",modifier = Modifier)
         }
