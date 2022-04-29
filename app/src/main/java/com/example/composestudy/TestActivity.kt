@@ -43,23 +43,14 @@ fun MyApp(){
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Hello( "Android")
-            ShowAge(26666666)
+            Text(text = "$100")
+            Spacer(modifier = Modifier.height(130.dp))
             CreateCircle()
         }
 
     }
 }
 
-@Composable
-fun Hello(name:String){
-    Text(text = "Hello $name!")
-}
-@Preview
-@Composable
-fun ShowAge(age: Int = 25){
-    Text(text = age.toString())
-}
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview(){
