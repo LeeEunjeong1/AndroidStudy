@@ -13,6 +13,7 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.composestudy.ui.theme.ComposeStudyTheme
@@ -22,22 +23,25 @@ class TestActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             ComposeStudyTheme{
-                Surface(
-                    modifier = Modifier.fillMaxHeight()
-                        .fillMaxWidth()
-                        .padding(all = 30.dp),
-                    color = MaterialTheme.colors.primary
-                ) {
-                    Column() {
-                        Hello( "Android")
-                        ShowAge(26666666)
-                    }
-
-                }
-
-
+                MyApp()
             }
         }
+    }
+}
+@Composable
+fun MyApp(){
+    Surface(
+        modifier = Modifier
+            .fillMaxHeight()
+            .fillMaxWidth()
+            .padding(all = 30.dp),
+        color = Color(0xFF4666d0)
+    ) {
+        Column() {
+            Hello( "Android")
+            ShowAge(26666666)
+        }
+
     }
 }
 
@@ -53,11 +57,6 @@ fun ShowAge(age: Int = 25){
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview(){
-    ComposeStudyTheme {
-        Column() {
-            Hello("Android")
-        }
-
-    }
+    MyApp()
 }
 
