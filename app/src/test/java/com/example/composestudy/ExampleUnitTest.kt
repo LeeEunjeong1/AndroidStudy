@@ -1,4 +1,4 @@
-package com.example.androidstudy
+package com.example.composestudy
 
 import org.junit.Test
 

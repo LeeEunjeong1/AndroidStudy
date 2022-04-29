@@ -1,4 +1,4 @@
-package com.example.androidstudy
+package com.example.composestudy
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -14,11 +14,10 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.platform.textInputServiceFactory
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.androidstudy.ui.theme.AndroidStudyTheme
+import com.example.composestudy.ui.theme.AndroidStudyTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
