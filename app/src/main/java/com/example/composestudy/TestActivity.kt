@@ -2,16 +2,18 @@ package com.example.composestudy
 
 import android.os.Bundle
 import android.os.PersistableBundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
@@ -60,3 +62,19 @@ fun DefaultPreview(){
     MyApp()
 }
 
+@Preview
+@Composable
+fun CreateCircle(){
+    Card(modifier = Modifier
+        .padding(3.dp)
+        .size(50.dp)
+        .clickable {
+                   Log.d("Tap","CreateCircle : Tap")
+        },
+    shape = CircleShape) {
+        Box(contentAlignment = Alignment.Center){
+            Text(text = "Tap",modifier = Modifier)
+        }
+
+    }
+}
