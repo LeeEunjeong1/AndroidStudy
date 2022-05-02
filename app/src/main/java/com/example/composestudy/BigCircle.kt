@@ -55,9 +55,6 @@ fun MyApp(){
             CreateCircle(cnt = cnt.value){ newValue ->
                 cnt.value = newValue + 1
             }
-            if(cnt.value > 10){
-                Text(text = "Over $10 !!")
-            }
         }
 
     }
