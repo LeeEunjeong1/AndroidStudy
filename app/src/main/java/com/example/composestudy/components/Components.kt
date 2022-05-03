@@ -21,13 +21,13 @@ import androidx.compose.ui.unit.sp
 @Composable
 fun InputField(
     modifier: Modifier = Modifier,
-    valueState: MutableState<String>,
+    valueState: MutableState<String>, // 현재 입력된 숫자 값 넘기기 위한 변수
     labelId: String,
     enabled : Boolean,
-    siSingleLine: Boolean,
-    keyboardType: KeyboardType = KeyboardType.Number,
-    imeAction: ImeAction = ImeAction.Next,
-    onAction: KeyboardActions = KeyboardActions.Default){
+    isSingleLine: Boolean, // 한줄만 허용할  것인지 여러 줄을 허용할 것인지에 대한 변수
+    keyboardType: KeyboardType = KeyboardType.Number, // 키보드타입 -> 숫자
+    imeAction: ImeAction = ImeAction.Next, // Action -> Next
+    onAction: KeyboardActions = KeyboardActions.Default){ // 키보드 액션 -> Default
     OutlinedTextField(value = valueState.value,
         onValueChange = { valueState.value = it },
                         label = { Text(text = labelId)},
