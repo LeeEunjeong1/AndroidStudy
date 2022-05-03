@@ -64,4 +64,6 @@ dependencies {
     implementation "androidx.compose.material:material-icons-extended:$compose_version"
     //이미지 표시
     implementation 'io.coil-kt:coil-compose:1.4.0'
+    //Icons
+    implementation "androidx.compose.material:material-icons-extended:$compose_version"
 }
