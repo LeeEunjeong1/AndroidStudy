@@ -91,6 +91,8 @@ fun SimpleList(){
     }
 }
 
+/* 리스트 목록 */
+
 @Composable
 fun ImageList(){
     val scrollState = rememberLazyListState()
