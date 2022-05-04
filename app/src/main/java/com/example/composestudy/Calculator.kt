@@ -66,7 +66,7 @@ fun TopHeader(totalPerPerson: Double = 0.0) {
         .height(150.dp)
         //.clip(shape = RoundedCornerShape(corner = CornerSize(12.dp)))
         .clip(shape = CircleShape.copy(all = CornerSize(12.dp))),
-        color = Color(color=0xFFE9D7F7)
+        color = Color(color = androidx.appcompat.R.color.material_blue_grey_900)
     ) {
         Column(
             modifier = Modifier.padding(12.dp),
@@ -77,6 +77,7 @@ fun TopHeader(totalPerPerson: Double = 0.0) {
             Text(text = "Total Per Person",
                 style = MaterialTheme.typography.h4)
             Text(text = "$$total",
+                style = MaterialTheme.typography.h4,
                 style = MaterialTheme.typography.h4,
                 fontWeight = FontWeight.ExtraBold
             )
